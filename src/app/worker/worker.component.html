@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5 p-5">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Age</th>
+            <th scope="col">Hire Date</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of getItems(); let i = index">
+          <tr>
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ item.Name }}</td>
+            <td>{{ item.Surname }}</td>
+            <td>{{ item.Age }}</td>
+            <td>{{ item.HireDate }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-5 p-5">
+      <input
+        #name
+        type="text"
+        class="form-control mb-5"
+        input.value=""
+        placeholder="Name"
+      />
+      <input
+        #surname
+        type="text"
+        class="form-control mb-5"
+        input.value=""
+        placeholder="Surname"
+      />
+      <input
+        #age
+        type="number"
+        class="form-control mb-5"
+        input.value=""
+        placeholder="Age"
+      />
+      <input
+        #datee
+        type="date"
+        class="form-control mb-5"
+        input.value=""
+        placeholder="Date"
+      />
+
+      <button (click)="Add(name, surname, age, datee)" class="btn btn-primary" >
+        Add
+      </button>
+    </div>
+  </div>
+</div>
